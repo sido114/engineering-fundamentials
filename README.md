@@ -48,6 +48,7 @@ npm test
 
 ### Automated test execution
 Adapt GitHub Actions workflow in the ``.gibhub/workflows`` directory such, that the unit tests are executed for every merge request and every push to the main branch.
+Check in the GitHub UI that, after each new commit on main, the GitHub Action is successfully executed.
 
 ## PART B - Continuous Integration
 
@@ -56,7 +57,7 @@ Adapt GitHub Actions workflow in the ``.gibhub/workflows`` directory such, that 
 2. Create your own [azure container registry](https://portal.azure.com/#browse/Microsoft.ContainerRegistry%2Fregistries) \
     a) You will need to create a new resource group. Use default configs for resource group and container registry. \
     b) Use your initials (e.g. SZE) as prefix for Resource Group
-3. Get password of your ACR from your (local) Terminal. For the moment, we are using the ACR Admin credentials for publishing images to the ACR.
+3. Get password of your ACR from your Codespace Terminal. For the moment, we are using the ACR Admin credentials for publishing images to the ACR.
 ```
 az login
 az acr update --name <My-Azure-ACR> --admin-enabled true
@@ -122,9 +123,9 @@ for the application name with under ``AZURE_WEBAPP_NAME`` containing ``<your-web
 ### Extend your GitHub Actions to use SonarCloud
 1. Follow the **Task D.1** in docker-publish.yml to enable SonarCloud analysis for each new Pull Request. \
   a) Use the Project Key and Organization Key found in your SonarCloud project under 'Information'
-2. Observe your issues in SonarCloud. **Fix them**.: \
-  a) Issue in **App.tsx** (SonarCloud Project &rarr; Main Branch &rarr; Overall Code &rarr; Maintainability) \
-  b) Issue in **Dockerfile** (SonarCloud Project &rarr; Main Branch &rarr; Overall Code &rarr; Security Hotspots)
+2. Observe your issues in SonarCloud  ((SonarCloud Project &rarr; Main Branch &rarr; Overall Code &rarr; Maintainability / Security Hotspots). **Fix them**.: \
+  a) Issue in **App.tsx** (in Maintainability) \
+  b) Issue in **Dockerfile** (in Security Hotspots)
 
 ## PART E - Security (Optional)
 
