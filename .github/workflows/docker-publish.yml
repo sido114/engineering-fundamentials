@@ -108,9 +108,9 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build -t lrengineering.azurecr.io/ipt-spins:${{ steps.versioning.outputs.full_tag }} -t lrengineering.azurecr.io/ipt-spins:latest .
+          docker build -t sgfcr.azurecr.io/ipt-sandbox:${{ steps.versioning.outputs.full_tag }} -t sgfcr.azurecr.io/ipt-sandbox:latest .
 
       - name: Push the Docker image to ACR
         run: |
-          docker push lrengineering.azurecr.io/ipt-spins:${{ steps.versioning.outputs.full_tag }}
-          docker push lrengineering.azurecr.io/ipt-spins:latest
+          docker push sgfcr.azurecr.io/ipt-sandbox:${{ steps.versioning.outputs.full_tag }}
+          docker push sgfcr.azurecr.io/ipt-sandbox:latest
