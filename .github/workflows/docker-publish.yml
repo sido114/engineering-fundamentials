@@ -69,7 +69,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: lrengineering.azurecr.io
-          username: sgfCr
+          username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Generate and Push Git Tag for New Version
