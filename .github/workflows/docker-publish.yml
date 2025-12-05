@@ -63,6 +63,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-tags: true
+          fetch-depth: 0 # Required to access all git tags for versioning
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Log in to Azure Container Registry
